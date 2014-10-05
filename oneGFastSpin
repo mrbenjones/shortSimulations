@@ -1,0 +1,5 @@
+a=1  # 1 g acceleration
+rot=.2 # 5 spins a minute
+x=75 # 75 meters starboard of the center of rotation
+y=50 # 50 meters fore of the center of rotation
+
