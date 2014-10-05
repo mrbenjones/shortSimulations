@@ -1,0 +1,4 @@
+a=0  # no linear acceleration
+rot=.104 # one spin per second
+x=0 # along the central fore-aft axis of the ship
+y=4 # 4 meters fore of center of rotation

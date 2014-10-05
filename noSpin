@@ -1,0 +1,4 @@
+a=1 #
+rot=80000000000 # a year or two per rotation - negigible in time limit
+x=0 # at center of rotation
+y=0 # at center of rotation
