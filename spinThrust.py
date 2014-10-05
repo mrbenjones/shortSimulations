@@ -91,6 +91,8 @@ def runSim(vars,outputFile,click=DEFAULT_CLICK):
     x=0.0
     y=0.0
     r=sqrt(vars.get("x",0.)**2.0+vars.get("y",0.)**2.0)
+    xComp=vars.get("x")
+    yComp=vars.get("y")
     """
     get acceleration in meters per second per second.
     """
@@ -114,13 +116,19 @@ def runSim(vars,outputFile,click=DEFAULT_CLICK):
     windowY=[]
     lastT=0.0
     out=open(outputFile,"w")
-    out.write("time\ttheta\tx\ty\ta_fore\ta_starboard\ta_magnitude\terr estimate\n")
+    out.write("time\ttheta\tx\ty\ta_aft\ta_starboard\ta_magnitude\terr estimate\n")
     while(t<TIME_END):
         # boost velocity in the direction of pointing.
         x=x+vx*click
         y=y+vy*click
-        xpos=x+r*cos(theta)
-        ypos=y+r*sin(theta)
+        # position determined by moving starboard by xComp and fore by yComp
+        foreI=cos(theta)
+        foreJ=sin(theta)
+        starbI=sin(theta)
+        starbJ=-cos(theta)
+        xpos=x+xComp*foreI+yComp*starbI
+        ypos=y+xComp*foreJ+yComp*starbJ
+        
         ax=a*cos(theta)
         ay=a*sin(theta)
         vx=vx+click*ax

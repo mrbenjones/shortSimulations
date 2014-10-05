@@ -7,4 +7,7 @@ at a gravities while spinning one every {rot} cycles.  If you run
 
 , it will output one tab delimited file for each input file, each output file
 using the inputs to produce the table. 
- 
+
+changelog
+----------------------
+13:07, October 4 adjusted positioning and changed fore to aft.  
